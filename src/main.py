@@ -29,6 +29,8 @@ df['Date_reported'] = pd.to_datetime(df['Date_reported'])
 countries = list(set(df['Country']))
 countries.sort()
 
+countries = ['Iran (Islamic Republic of)']
+
 for i in range(len(countries)):
 
     filter_country = df['Country'] == countries[i]
@@ -54,7 +56,7 @@ for i in range(len(countries)):
                 ax[row][col].set_title(countries[i])
 
     pl.tight_layout()
-    pl.savefig(join("../data", "figs", countries[i]+".png"))
+    pl.savefig(join("../data", "fig", countries[i]+".png"))
     pl.close()
 
 
